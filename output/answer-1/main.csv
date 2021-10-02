@@ -1,0 +1,15 @@
+import pandas as pd
+df = pd.read_csv("Book1.csv")
+df
+value=10
+df1 = df.groupby(df.index//value).sum()
+df1
+year=1960
+sum=9
+for i in range(5):
+    df1.iloc[i,0] = year;
+    df1.iloc[i,1] = df.iloc[sum,1]
+    year = year + 10
+    sum = sum + 10
+df1
+df1.drop(['Total'], axis = 1)
