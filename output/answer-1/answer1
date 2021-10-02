@@ -1,0 +1,4 @@
+url = 'https://raw.githubusercontent.com/Bungeetech/internship-test2/master/input/question-1/main.csv'
+df1 = pd.read_csv(url)
+df2=df1.groupby((df1.Year//10)*10).sum()
+df2
