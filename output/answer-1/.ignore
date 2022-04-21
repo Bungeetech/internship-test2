@@ -1,0 +1,21 @@
+import pandas as pd
+
+df=pd.read_csv(r"C:\Users\DELL\OneDrive\Desktop\main.csv")
+
+df
+
+
+
+df.groupby('product_description')['price'].mean()
+
+df["price_new"] = df['price'].fillna(
+   df.groupby('product_description')['price'].transform("mean")
+)
+
+df[df["price"].isna()].head()
+
+df
+
+df.to_csv(r'C:\Users\DELL\OneDrive\Desktop\answer-1.csv')
+
+df
