@@ -1,0 +1,10 @@
+import pandas as pd
+  
+data = pd.read_csv('main.csv')
+
+data.head()
+  
+#data['price'] = data['price'].fillna(data['price'].mean())
+
+data.groupby('product_description')['price'].mean()
+data['price_n'] = data['price'].fillna(data.groupby('product_description')['price'].transform("mean"))
