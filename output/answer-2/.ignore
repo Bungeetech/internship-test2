@@ -1,0 +1,12 @@
+import pandas as pd
+
+df=pd.read_csv(r"C:\Users\DELL\OneDrive\Desktop\main.csv")
+
+df.groupby("product_description")["price"].apply(
+    lambda x: x.max() - x.min()
+)
+
+max_apple = df[df.product_description=="apple"]["price"].max()
+min_apple = df[df.product_description=="apple"]["price"].min()
+max_apple - min_apple
+
